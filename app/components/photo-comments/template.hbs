@@ -1,0 +1,15 @@
+{{#each postComments as |comment index|}}
+  <div class="comment">
+    <p>
+      <strong>{{comment.user}}</strong>
+      {{comment.text}}
+      <button class="remove-comment" onclick={{action remove postId index}}>&times;</button>
+    </p>
+  </div>
+{{/each}}
+
+<form class="comment-form" {{action "handleSubmit" on="submit"}}>
+  {{input type="text" value=author placeholder="author"}}
+  {{input type="text" value=comment placeholder="comment"}}
+  <input type="submit" hidden />
+</form>

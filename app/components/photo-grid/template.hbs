@@ -1,0 +1,3 @@
+  {{#each posts as |post index|}}
+    {{photo-item post=post comments=comments like=(action "increment") i=index}}
+  {{/each}}
